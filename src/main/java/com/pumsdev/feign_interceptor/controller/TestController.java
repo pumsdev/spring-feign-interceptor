@@ -4,6 +4,7 @@ import com.pumsdev.feign_interceptor.service.HttpBinService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,5 +17,10 @@ public class TestController {
     @GetMapping("/headers")
     public ResponseEntity<Object> getHeaders() {
         return ResponseEntity.ok(httpBinService.getHeaders());
+    }
+
+    @PostMapping("/anything")
+    public ResponseEntity<Object> postAnything() {
+        return ResponseEntity.ok(httpBinService.postAnything());
     }
 }
